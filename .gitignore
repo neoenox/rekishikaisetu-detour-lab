@@ -1,0 +1,24 @@
+# Generated / binary assets
+__pycache__/
+*.pyc
+*.onnx
+*.bin
+*.mp3
+*.mp4
+*.wav
+*.png
+*.jpg
+*.jpeg
+
+# Local outputs
+out_en/*
+!out_en/review_*.md
+
+# TTS models and large assets (downloaded separately)
+assets/tts/
+assets/ocean2500/fv/
+assets/branding/
+
+# Local environment
+.venv/
+.DS_Store

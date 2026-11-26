@@ -1,0 +1,59 @@
+# English edition (independent project).
+# This is NOT read by the Japanese channel's scripts. Do not merge into ../channel.toml.
+
+[channel]
+name = "The Detour Lab"
+handle = "@detour-lab"
+tagline = "Follow the small questions"
+about = "The Detour Lab checks the things you think you know, using real sources and simple math."
+language = "en"
+category = "Education"
+
+[voice]
+# Adopted for the final video: Kokoro af_heart (Kokoro-82M), Apache 2.0.
+# Piper en_US-kristin-medium (public domain, LibriVox recordings) is an earlier draft only.
+speaker = "Kokoro af_heart"
+style = ""
+credit = "Voice: Kokoro af_heart (Kokoro-82M, Apache 2.0). Its training data includes Koniwa (CC BY 3.0) and SIWIS (CC BY 4.0); whether those attribution terms apply to this generated narration has not been confirmed."
+label = "Kokoro af_heart"
+speed = 1.0
+license_url = "https://huggingface.co/hexgrad/Kokoro-82M/raw/main/README.md"
+license_text_url = "https://github.com/hexgrad/kokoro/blob/main/LICENSE"
+model = "assets/tts/kokoro/"
+
+[bgm]
+# Same track as the Japanese channel. License checked on the official site 2026-11-24.
+file = "../assets/bgm_maou/maou_bgm_piano12.mp3"
+credit = "Music: 魔王魂 (https://maou.audio/) Piano 12, composed by 森田交一"
+dir = "../assets/bgm_maou"
+pattern = "maou_bgm_{name}.mp3"
+credit_long = "Music: 魔王魂 (https://maou.audio/) Piano 12, composed by 森田交一"
+license_url = "https://maou.audio/"
+
+[background]
+# Final video uses four existing FreeVideo AI-generated clips in assets/ocean2500/fv/.
+# The user confirmed the generator on 2026-11-25: FlashML-org/FreeVideo (MiniMax H3).
+# License facts were checked against primary sources on 2026-11-25; see SPEC.md section 5.
+source = "FreeVideo AI-generated clips (assets/ocean2500/fv/clip1-4.mp4)"
+ai_generated = true
+generator = "FlashML-org/FreeVideo (MiniMax H3)"
+license_status = "Japan is inside the Applicable Territory; commercial use is permitted within it, subject to the conditions recorded in SPEC.md section 5"
+license_url = "https://github.com/FlashML-org/FreeVideo"
+model_license_url = "https://huggingface.co/MiniMaxAI/MiniMax-H3/raw/main/LICENSE"
+credit = "Background: AI-generated video clips (FreeVideo), not real footage"
+disclosure = "Declare synthetic/AI-generated visuals in the YouTube 'Altered or synthetic content' question and in the video description."
+heading_and_captions = "Made for this video"
+
+[fonts]
+# Same family as the Japanese channel. Installed on Windows.
+dir = "C:/Windows/Fonts/"
+sans = "NotoSansJP-VF.ttf"
+serif = "NotoSansJP-VF.ttf"
+
+[hashtags]
+shorts = "#Shorts #CuriousFacts"
+long = "#TheDetourLab #Explainer"
+
+[project]
+status = "planning"
+source_project = "Japanese channel 'Yorimichi Lab' (do not modify)"
