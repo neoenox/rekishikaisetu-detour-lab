@@ -15,6 +15,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 from detour_ffmpeg import ffmpeg as _ffmpeg
+from output_guard import ensure_output_available
 FFMPEG = _ffmpeg()
 
 ROOT = Path(__file__).resolve().parent
@@ -98,6 +99,8 @@ def read_timings():
 
 
 def build():
+    final = OUT / "ocean_blue_fv.mp4"
+    ensure_output_available(final)
     starts, audio_duration = read_timings()
     ends = list(starts[1:]) + [audio_duration]
     dur_list = [ends[i] - starts[i] for i in range(5)]
@@ -124,7 +127,7 @@ def build():
     bgm = ROOT / "assets" / "bgm_maou" / "maou_bgm_piano12.mp3"
     final = OUT / "ocean_blue_fv.mp4"
     cmd = [
-        FFMPEG, "-y", "-f", "concat", "-safe", "0", "-i", str(concat),
+        FFMPEG, "-n", "-f", "concat", "-safe", "0", "-i", str(concat),
         "-i", str(audio), "-i", str(bgm),
         "-filter_complex",
         "[1:a]volume=1.0[narr];[2:a]volume=0.10[bg];[narr][bg]amix=inputs=2:duration=first:dropout_transition=0,loudnorm=I=-14:TP=-1.5:LRA=11[mix]",
